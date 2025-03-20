@@ -1,0 +1,124 @@
+1.Listing and Navigating Directories
+ls – List files in a directory.
+ls -a → Show hidden files.
+ls -l → Show detailed file info.
+ls -lh → Human-readable file sizes.
+ls -R → Recursive listing (subdirectories).
+pwd – Print working directory.
+cd – Change directory.
+cd /home/user → Change to a specific directory.
+cd .. → Move up one directory.
+cd - → Return to the previous directory.
+tree – Display directories in a tree-like format.
+
+1.2 Creating, Moving, and Deleting Files
+touch – Create an empty file or update a timestamp.
+touch file.txt → Create a new file.
+mkdir – Create a directory.
+mkdir newdir → Create a single directory.
+mkdir -p dir1/dir2 → Create nested directories.
+cp – Copy files or directories.
+cp file1 file2 → Copy a file.
+cp -r dir1 dir2 → Copy a directory recursively.
+mv – Move or rename files.
+mv oldfile newfile → Rename a file.
+mv file /path/to/dir/ → Move a file.
+rm – Remove files or directories.
+rm file.txt → Delete a file.
+rm -r folder/ → Delete a directory recursively.
+rm -f file.txt → Force delete a file without confirmation.
+rmdir – Remove an empty directory.
+
+2. File Viewing and Manipulation
+cat – Display file contents.
+cat file.txt → View a file.
+cat file1 file2 → Concatenate files.
+less – View large files one page at a time.
+less file.txt → Open file in less.
+head – Display the first few lines of a file.
+head -n 20 file.txt → Show first 20 lines.
+tail – Display the last few lines of a file.
+tail -f logfile.log → Monitor log file in real-time.
+wc – Count words, lines, characters.
+wc -l file.txt → Count lines.
+wc -w file.txt → Count words.
+cut – Extract specific columns from a file.
+cut -d':' -f1 /etc/passwd → Show usernames from /etc/passwd.
+awk – Pattern scanning and text processing.
+awk '{print $1}' file.txt → Print first column.
+sed – Stream editor for text replacement.
+sed 's/old/new/g' file.txt → Replace "old" with "new".
+
+3. File Permissions and Ownership
+ls -l – View file permissions.
+chmod – Change file permissions.
+chmod 755 file.sh → Set read, write, execute for owner; read, execute for others.
+chmod u+x file.sh → Add execute permission for owner.
+chown – Change file ownership.
+chown user:group file.txt → Change owner and group.
+umask – Set default permissions.
+umask 022 → Set default permissions to 755.
+
+4. Process Management
+ps aux – View active processes.
+top – Monitor system performance.
+htop – Interactive process viewer.
+kill PID – Kill a process by ID.
+pkill process – Kill a process by name.
+nice -n 10 process – Run a process with lower priority.
+renice -5 PID – Change the priority of a running process.
+
+5. Disk and Storage Management
+df -h – Show disk space usage.
+du -sh – Show directory size.
+mount /dev/sdb1 /mnt – Mount a drive.
+umount /mnt – Unmount a drive.
+fdisk -l – List partition details.
+
+6. Networking Commands
+ip a – Show network interfaces.
+ping google.com – Test network connectivity.
+traceroute google.com – Show packet path.
+netstat -tulnp – Show network connections.
+nmap -sS target.com – Scan open ports.
+7. Package Management
+
+7.1 Debian-based (APT)
+apt update – Refresh package index.
+apt upgrade – Upgrade installed packages.
+apt install package – Install a package.
+7.2 RHEL-based (YUM/DNF)
+dnf update – Update packages.
+dnf install package – Install a package.
+
+8. User Management
+whoami – Show current user.
+id – Show user ID and groups.
+useradd newuser – Add a new user.
+passwd user – Change user password.
+usermod -aG sudo user – Add user to sudo group.
+groupadd newgroup – Create a new group.
+groupdel oldgroup – Delete a group.
+
+9. System Logs and Monitoring
+journalctl -xe – View system logs.
+dmesg – View kernel messages.
+sysctl -a – Show system parameters.
+
+10. Git Version Control
+git init – Initialize a repository.
+git clone repo_url – Clone a repository.
+git add . – Stage changes.
+git commit -m "message" – Commit changes.
+git push origin branch_name – Push changes to remote.
+git pull origin branch_name – Pull updates from remote.
+git status – Show repository status.
+git log – View commit history.
+
+11. Docker and Containers
+docker ps – List running containers.
+docker images – List available images.
+docker run -d image_name – Run a container in detached mode.
+docker stop container_id – Stop a container.
+docker rm container_id – Remove a container.
+docker rmi image_name – Remove an image.
