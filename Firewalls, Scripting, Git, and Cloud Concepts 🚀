@@ -1,0 +1,146 @@
+1. Implement and Configure Firewalls
+
+1.1 Firewall Basics
+Firewall Use Cases:
+Open and close ports
+Check current firewall configuration
+Enable/disable Internet Protocol (IP) forwarding
+1.2 Common Firewall Technologies
+firewalld – Dynamic firewall management tool
+iptables – Rule-based packet filtering firewall
+nftables – Modern replacement for iptables
+UFW (Uncomplicated Firewall) – Simplified firewall management
+1.3 Key Firewall Features
+Zones – Define levels of trust for different network interfaces
+Services – Manage allowed applications
+Stateful – Tracks active connections
+Stateless – Examines each packet independently
+
+2. Remote Connectivity & Access Controls
+
+2.1 Secure Shell (SSH) Configuration
+Config Files:
+/etc/ssh/sshd_config – Server configuration
+/etc/ssh/ssh_config – Client configuration
+~/.ssh/authorized_keys – Allowed public keys
+~/.ssh/known_hosts – Known remote hosts
+Common SSH Commands:
+ssh-keygen – Generate SSH keys
+ssh-copy-id user@host – Copy public key to a remote machine
+ssh-add – Add a private key to the authentication agent
+Tunneling:
+X11 forwarding – Run GUI apps over SSH
+Port forwarding – Redirect network traffic through SSH
+Dynamic forwarding – Create a SOCKS proxy
+
+2.2 Executing Commands as Another User
+Privilege Escalation Methods:
+sudo command – Run a command as root
+su - – Switch to another user
+pkexec – Execute commands using PolicyKit
+/etc/sudoers – Configure sudo access
+visudo – Safely edit the sudoers file
+
+2.3 File Permissions and Security
+Permission Types:
+r (read) – View file contents
+w (write) – Modify file contents
+x (execute) – Run the file as a program
+Special File Permissions:
+SUID (Set User ID) – Runs as the file owner
+SGID (Set Group ID) – Runs with group privileges
+Sticky Bit – Prevents users from deleting files they don’t own
+Command Utilities:
+chmod – Change file permissions
+chown – Change file owner
+umask – Set default permissions
+lsattr – List file attributes
+chattr – Change file attributes
+Security-Enhanced Linux (SELinux):
+Modes: Enforcing, Permissive, Disabled
+Commands:
+getenforce – Check SELinux mode
+setenforce – Change SELinux mode
+setsebool – Modify SELinux booleans
+restorecon – Restore default SELinux contexts
+
+3. Scripting, Containers, and Automation
+
+3.1 Shell Scripting
+Key Elements:
+Loops – while, for, until
+Conditionals – if, case
+Parameter Expansion – Globbing, brace expansion
+Regular Expressions – Used for pattern matching
+Redirection – >, >>, 2>, | (pipes)
+Exit Codes – $? checks if a command succeeded
+Common Utilities:
+awk, sed, find, grep, xargs, cut, tr, tee
+Environment Variables: $PATH, $SHELL, $?
+
+3.2 Basic Container Operations
+Container Management:
+Start/stop – docker start, docker stop
+Inspect – docker inspect
+List containers – docker ps -a
+Connect – docker exec -it container_name bash
+Logs – docker logs container_name
+Expose ports – docker run -p 8080:80 image_name
+Container Image Operations:
+Build – docker build -t image_name .
+Push – docker push image_name
+Pull – docker pull image_name
+List – docker images
+Remove – docker rmi image_name
+
+4. Git, Infrastructure as Code, and Cloud Concepts
+
+4.1 Version Control with Git
+Basic Git Commands:
+Clone – git clone repo_url
+Push – git push origin branch_name
+Pull – git pull origin branch_name
+Commit – git commit -m "message"
+Add – git add file_name
+Checkout – git checkout branch_name
+Branch – git branch branch_name
+Tag – git tag tag_name
+Ignore files – .gitignore
+Advanced Git Topics:
+Merge – git merge branch_name
+Rebase – git rebase branch_name
+Pull Requests – Used in GitHub for collaboration
+
+4.2 Infrastructure as Code (IaC)
+File Formats:
+YAML – Used in Ansible, Kubernetes, and CI/CD
+JSON – Common for cloud APIs
+Configuration Management Tools:
+Ansible – Agentless automation
+Puppet – Declarative configuration management
+Chef – Infrastructure as code automation
+SaltStack – Scalable remote execution
+Terraform – Infrastructure provisioning
+CI/CD (Continuous Integration & Deployment):
+Automate testing, building, and deployment
+
+5. Cloud and Orchestration Concepts
+
+5.1 Kubernetes and Container Orchestration
+Key Kubernetes Components:
+Pods – Smallest deployable unit
+Sidecars – Helper containers in a pod
+Ambassador Containers – Proxy containers
+Multicontainer Use Cases:
+Docker Compose – Define and run multiple containers
+Container Persistent Storage:
+Volumes and storage drivers
+
+5.2 Container Networking & Service Mesh
+Container Networks:
+Overlay, Bridging, NAT, Host networking
+Service Mesh:
+Istio, Linkerd – Manage inter-service communication
+Bootstrapping & Registries:
+cloud-init – Automate instance setup
+Container Registries – Store and distribute images
